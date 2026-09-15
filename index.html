@@ -1,0 +1,2149 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SI-TAMU PRESISI | Buku Tamu & Agenda Sekolah Modern</title>
+  
+  <!-- Tipografi Elegan: Plus Jakarta Sans & Outfit -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <style>
+    /* ==========================================================================
+       SISTEM WARNA MODERN: 70% KUNING (GOLD/AMBER) & 30% BIRU (ROYAL NAVY)
+       ========================================================================== */
+    :root {
+      /* Palette 70% Kuning (Warm Amber & Soft Gold Surfaces) */
+      --yellow-surface: #fefcf3;
+      --yellow-surface-card: #fef9e7;
+      --yellow-surface-elevated: #fef3c7;
+      --yellow-border: #fde68a;
+      --yellow-border-strong: #facc15;
+      --yellow-primary: #eab308;
+      --yellow-accent: #ca8a04;
+      --yellow-glow: rgba(234, 179, 8, 0.25);
+
+      /* Palette 30% Biru (Deep Royal Navy Structures) */
+      --navy-darkest: #07152b;
+      --navy-primary: #0f274a;
+      --navy-surface: #17355f;
+      --navy-border: #1e4277;
+      --navy-accent: #1d4ed8;
+      --navy-subtle: #dbeafe;
+
+      /* Netral & Semantik */
+      --text-main: #0f172a;
+      --text-muted: #475569;
+      --text-light: #f8fafc;
+      --danger: #e11d48;
+      --danger-bg: #ffe4e6;
+      --success: #059669;
+      --success-bg: #d1fae5;
+      --white: #ffffff;
+
+      /* Dimensi & Transisi */
+      --font-display: 'Outfit', sans-serif;
+      --font-body: 'Plus Jakarta Sans', sans-serif;
+      --radius-sm: 8px;
+      --radius-md: 14px;
+      --radius-lg: 22px;
+      --radius-xl: 30px;
+      --shadow-soft: 0 4px 20px -2px rgba(15, 39, 74, 0.06), 0 2px 6px -1px rgba(15, 39, 74, 0.04);
+      --shadow-hover: 0 20px 30px -8px rgba(15, 39, 74, 0.12), 0 8px 16px -4px rgba(234, 179, 8, 0.15);
+      --transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: var(--font-body);
+      -webkit-font-smoothing: antialiased;
+    }
+
+    body {
+      background-color: var(--yellow-surface);
+      background-image: 
+        radial-gradient(at 0% 0%, rgba(254, 240, 138, 0.6) 0px, transparent 50%),
+        radial-gradient(at 100% 100%, rgba(253, 224, 71, 0.3) 0px, transparent 50%);
+      color: var(--text-main);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    h1, h2, h3, h4, .brand-title, .gateway-title {
+      font-family: var(--font-display);
+      letter-spacing: -0.02em;
+    }
+
+    /* ================= HEADER ELEGAN DENGAN LOGO SEKOLAH ================= */
+    .app-header {
+      background: var(--navy-darkest);
+      color: var(--text-light);
+      padding: 0.9rem 2rem;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      box-shadow: 0 10px 25px -5px rgba(7, 21, 43, 0.35);
+      border-bottom: 3px solid var(--yellow-border-strong);
+    }
+
+    .header-inner {
+      max-width: 1280px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1.5rem;
+    }
+
+    .brand-cluster {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      cursor: pointer;
+      text-decoration: none;
+    }
+
+    .brand-symbol {
+      width: 44px;
+      height: 44px;
+      background: linear-gradient(135deg, var(--yellow-border-strong), var(--yellow-accent));
+      color: var(--navy-darkest);
+      border-radius: var(--radius-md);
+      display: grid;
+      place-items: center;
+      font-size: 1.4rem;
+      font-weight: 800;
+      box-shadow: 0 0 15px var(--yellow-glow);
+    }
+
+    .brand-name {
+      font-size: 1.25rem;
+      font-weight: 800;
+      color: var(--white);
+      line-height: 1.15;
+    }
+
+    .brand-tagline {
+      font-size: 0.72rem;
+      color: var(--yellow-border-strong);
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      font-weight: 600;
+    }
+
+    .school-logo-hub {
+      display: flex;
+      align-items: center;
+      gap: 0.85rem;
+      background: rgba(255, 255, 255, 0.06);
+      padding: 0.4rem 1rem;
+      border-radius: 50px;
+      border: 1px solid rgba(250, 204, 21, 0.3);
+      backdrop-filter: blur(8px);
+    }
+
+    .school-logo-frame {
+      width: 42px;
+      height: 42px;
+      border-radius: 50%;
+      background: var(--white);
+      padding: 2px;
+      border: 2px solid var(--yellow-border-strong);
+      overflow: hidden;
+      display: grid;
+      place-items: center;
+    }
+
+    .school-logo-frame img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+    }
+
+    .school-meta {
+      text-align: right;
+    }
+
+    .school-name-text {
+      font-family: var(--font-display);
+      font-size: 0.88rem;
+      font-weight: 700;
+      color: var(--yellow-border);
+    }
+
+    .school-loc-text {
+      font-size: 0.7rem;
+      color: #94a3b8;
+    }
+
+    /* ================= HALAMAN PILIHAN AWAL (GATEWAY / LANDING) ================= */
+    .gateway-wrapper {
+      max-width: 1100px;
+      margin: auto;
+      padding: 3rem 1.5rem;
+      text-align: center;
+      animation: fadeIn 0.4s ease;
+    }
+
+    .gateway-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.4rem 1.1rem;
+      background: var(--yellow-surface-card);
+      border: 1px solid var(--yellow-border-strong);
+      border-radius: 50px;
+      font-size: 0.8rem;
+      font-weight: 700;
+      color: var(--navy-primary);
+      margin-bottom: 1.25rem;
+      box-shadow: var(--shadow-soft);
+    }
+
+    .gateway-heading {
+      font-size: 2.75rem;
+      font-weight: 800;
+      color: var(--navy-darkest);
+      line-height: 1.15;
+      margin-bottom: 0.85rem;
+    }
+
+    .gateway-heading span {
+      background: linear-gradient(135deg, var(--yellow-accent), var(--navy-primary));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .gateway-desc {
+      font-size: 1.05rem;
+      color: var(--text-muted);
+      max-width: 620px;
+      margin: 0 auto 3rem;
+      line-height: 1.6;
+    }
+
+    .gateway-cards {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 1.75rem;
+      text-align: left;
+    }
+
+    @media (min-width: 768px) {
+      .gateway-cards {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+
+    .gate-card {
+      background: var(--yellow-surface-card);
+      border: 2px solid var(--yellow-border);
+      border-radius: var(--radius-xl);
+      padding: 2.25rem;
+      cursor: pointer;
+      transition: var(--transition);
+      position: relative;
+      overflow: hidden;
+      box-shadow: var(--shadow-soft);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .gate-card::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 6px;
+      background: linear-gradient(90deg, var(--yellow-border-strong), var(--yellow-accent));
+      opacity: 0;
+      transition: var(--transition);
+    }
+
+    .gate-card:hover {
+      transform: translateY(-8px);
+      box-shadow: var(--shadow-hover);
+      border-color: var(--yellow-border-strong);
+      background: var(--white);
+    }
+
+    .gate-card:hover::before {
+      opacity: 1;
+    }
+
+    .gate-card-admin {
+      background: linear-gradient(180deg, var(--yellow-surface-card) 0%, rgba(254, 240, 138, 0.4) 100%);
+    }
+
+    .gate-card-admin::before {
+      background: linear-gradient(90deg, var(--navy-primary), var(--navy-accent));
+    }
+
+    .gate-icon-frame {
+      width: 68px;
+      height: 68px;
+      border-radius: var(--radius-lg);
+      background: var(--yellow-surface-elevated);
+      color: var(--navy-darkest);
+      display: grid;
+      place-items: center;
+      font-size: 2rem;
+      margin-bottom: 1.5rem;
+      border: 1px solid var(--yellow-border-strong);
+      box-shadow: 0 8px 15px rgba(234, 179, 8, 0.2);
+      transition: var(--transition);
+    }
+
+    .gate-card:hover .gate-icon-frame {
+      transform: scale(1.08) rotate(3deg);
+    }
+
+    .gate-card-admin .gate-icon-frame {
+      background: var(--navy-primary);
+      color: var(--yellow-border-strong);
+      border: 1px solid var(--navy-border);
+      box-shadow: 0 8px 15px rgba(15, 39, 74, 0.2);
+    }
+
+    .gate-title {
+      font-size: 1.55rem;
+      font-weight: 800;
+      color: var(--navy-darkest);
+      margin-bottom: 0.6rem;
+    }
+
+    .gate-description {
+      font-size: 0.92rem;
+      color: var(--text-muted);
+      line-height: 1.55;
+      margin-bottom: 1.75rem;
+      flex-grow: 1;
+    }
+
+    .gate-action-btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: space-between;
+      width: 100%;
+      padding: 0.95rem 1.4rem;
+      border-radius: var(--radius-md);
+      font-weight: 700;
+      font-size: 0.95rem;
+      border: none;
+      cursor: pointer;
+      transition: var(--transition);
+    }
+
+    .btn-gate-guest {
+      background: var(--navy-primary);
+      color: var(--yellow-border);
+    }
+
+    .gate-card:hover .btn-gate-guest {
+      background: var(--navy-darkest);
+      color: var(--white);
+    }
+
+    .btn-gate-admin {
+      background: linear-gradient(135deg, var(--yellow-primary), var(--yellow-accent));
+      color: var(--navy-darkest);
+    }
+
+    .gate-card:hover .btn-gate-admin {
+      background: var(--yellow-border-strong);
+      box-shadow: 0 4px 15px var(--yellow-glow);
+    }
+
+    /* ================= PORTAL SHELL & SUB-NAVIGASI ================= */
+    .portal-shell {
+      display: none;
+      max-width: 1280px;
+      width: 100%;
+      margin: 1.75rem auto 3rem;
+      padding: 0 1.25rem;
+      animation: fadeIn 0.35s ease;
+    }
+
+    .portal-shell.active {
+      display: block;
+    }
+
+    .portal-action-bar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 1.5rem;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+
+    .btn-back-home {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.55rem 1.1rem;
+      background: var(--yellow-surface-card);
+      border: 1.5px solid var(--yellow-border-strong);
+      border-radius: var(--radius-md);
+      font-size: 0.85rem;
+      font-weight: 700;
+      color: var(--navy-primary);
+      cursor: pointer;
+      transition: var(--transition);
+    }
+
+    .btn-back-home:hover {
+      background: var(--navy-primary);
+      color: var(--yellow-border-strong);
+      border-color: var(--navy-primary);
+    }
+
+    .sub-tabs {
+      display: flex;
+      background: var(--yellow-surface-card);
+      padding: 4px;
+      border-radius: var(--radius-md);
+      border: 1.5px solid var(--yellow-border);
+      gap: 4px;
+    }
+
+    .sub-tab-btn {
+      padding: 0.55rem 1.15rem;
+      border-radius: 10px;
+      border: none;
+      background: transparent;
+      font-weight: 700;
+      font-size: 0.85rem;
+      color: var(--navy-primary);
+      cursor: pointer;
+      transition: var(--transition);
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+    }
+
+    .sub-tab-btn.active {
+      background: var(--navy-primary);
+      color: var(--yellow-border);
+      box-shadow: var(--shadow-soft);
+    }
+
+    /* ================= KARTU MODERN & FORM ================= */
+    .modern-card {
+      background: var(--yellow-surface-card);
+      border: 1.5px solid var(--yellow-border);
+      border-radius: var(--radius-xl);
+      padding: 2.25rem;
+      box-shadow: var(--shadow-soft);
+      position: relative;
+    }
+
+    .card-header-styled {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border-bottom: 2px solid var(--yellow-border);
+      padding-bottom: 1.25rem;
+      margin-bottom: 1.75rem;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+    }
+
+    .card-title-main {
+      font-size: 1.45rem;
+      font-weight: 800;
+      color: var(--navy-darkest);
+      display: flex;
+      align-items: center;
+      gap: 0.65rem;
+    }
+
+    .elegant-badge {
+      background: var(--navy-primary);
+      color: var(--yellow-border);
+      padding: 0.3rem 0.85rem;
+      border-radius: 50px;
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 0.5px;
+    }
+
+    .form-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 1.25rem;
+    }
+
+    @media (min-width: 768px) {
+      .form-grid-2 { grid-template-columns: 1fr 1fr; }
+      .form-grid-3 { grid-template-columns: 1fr 1fr 1fr; }
+    }
+
+    .form-group {
+      display: flex;
+      flex-direction: column;
+      gap: 0.45rem;
+    }
+
+    .form-label {
+      font-size: 0.85rem;
+      font-weight: 700;
+      color: var(--navy-darkest);
+    }
+
+    .form-label .req {
+      color: var(--danger);
+    }
+
+    .form-input {
+      padding: 0.8rem 1rem;
+      border: 2px solid var(--yellow-border-strong);
+      border-radius: var(--radius-md);
+      font-size: 0.95rem;
+      background: var(--white);
+      color: var(--navy-darkest);
+      outline: none;
+      transition: var(--transition);
+    }
+
+    .form-input:focus {
+      border-color: var(--navy-primary);
+      box-shadow: 0 0 0 4px rgba(15, 39, 74, 0.12);
+    }
+
+    .adaptive-callout {
+      background: #fef08a;
+      border: 2px dashed var(--yellow-accent);
+      border-radius: var(--radius-md);
+      padding: 1.25rem;
+      margin-top: 0.75rem;
+      animation: fadeIn 0.25s ease;
+    }
+
+    /* ================= LIVE WEBRTC CAMERA MODULE ================= */
+    .camera-frame {
+      background: var(--navy-darkest);
+      border: 3px solid var(--yellow-border-strong);
+      border-radius: var(--radius-lg);
+      padding: 1.5rem;
+      color: var(--text-light);
+      text-align: center;
+      margin: 1.5rem 0;
+      position: relative;
+    }
+
+    .camera-viewport {
+      position: relative;
+      width: 100%;
+      max-width: 440px;
+      height: 310px;
+      margin: 1rem auto;
+      background: #000;
+      border-radius: var(--radius-md);
+      overflow: hidden;
+      display: grid;
+      place-items: center;
+      border: 2px solid var(--yellow-border);
+    }
+
+    #cameraVideo {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transform: scaleX(-1);
+    }
+
+    #snapshotImagePreview {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: none;
+    }
+
+    #cameraCanvas {
+      display: none;
+    }
+
+    .face-oval-guide {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 170px;
+      height: 230px;
+      border: 2px dashed var(--yellow-border-strong);
+      border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
+      pointer-events: none;
+      box-shadow: 0 0 0 9999px rgba(7, 21, 43, 0.5);
+      z-index: 5;
+    }
+
+    .face-oval-guide::after {
+      content: "Posisi Wajah";
+      position: absolute;
+      bottom: -28px;
+      left: 50%;
+      transform: translateX(-50%);
+      font-size: 0.72rem;
+      color: var(--yellow-border);
+      font-weight: 700;
+      background: var(--navy-darkest);
+      padding: 3px 10px;
+      border-radius: 20px;
+      white-space: nowrap;
+      border: 1px solid var(--yellow-border-strong);
+    }
+
+    .btn-group-camera {
+      display: flex;
+      justify-content: center;
+      gap: 0.75rem;
+      flex-wrap: wrap;
+      margin-top: 1rem;
+    }
+
+    /* ================= BUTTONS ================= */
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.55rem;
+      padding: 0.8rem 1.6rem;
+      font-weight: 700;
+      font-size: 0.92rem;
+      border-radius: var(--radius-md);
+      cursor: pointer;
+      border: none;
+      transition: var(--transition);
+      text-decoration: none;
+    }
+
+    .btn-navy {
+      background: var(--navy-primary);
+      color: var(--yellow-border);
+    }
+
+    .btn-navy:hover {
+      background: var(--navy-darkest);
+      color: var(--white);
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(15, 39, 74, 0.25);
+    }
+
+    .btn-gold {
+      background: linear-gradient(135deg, var(--yellow-border-strong), var(--yellow-accent));
+      color: var(--navy-darkest);
+    }
+
+    .btn-gold:hover {
+      background: var(--yellow-border-strong);
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px var(--yellow-glow);
+    }
+
+    .btn-danger { background: var(--danger); color: var(--white); }
+    .btn-danger:hover { background: #be123c; }
+
+    .btn-secondary { background: #e2e8f0; color: #334155; }
+    .btn-secondary:hover { background: #cbd5e1; }
+
+    .btn-sm {
+      padding: 0.45rem 0.85rem;
+      font-size: 0.8rem;
+      border-radius: var(--radius-sm);
+    }
+
+    /* ================= METRICS STATS ================= */
+    .metric-cluster {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+      gap: 1.25rem;
+      margin-bottom: 2rem;
+    }
+
+    .stat-card {
+      background: var(--yellow-surface-card);
+      border: 1.5px solid var(--yellow-border);
+      border-radius: var(--radius-lg);
+      padding: 1.25rem;
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      box-shadow: var(--shadow-soft);
+    }
+
+    .stat-icon {
+      width: 52px;
+      height: 52px;
+      border-radius: var(--radius-md);
+      display: grid;
+      place-items: center;
+      font-size: 1.5rem;
+      background: var(--yellow-surface-elevated);
+      color: var(--navy-primary);
+    }
+
+    .stat-num {
+      font-size: 1.85rem;
+      font-weight: 800;
+      color: var(--navy-darkest);
+      line-height: 1;
+    }
+
+    .stat-text {
+      font-size: 0.8rem;
+      color: var(--text-muted);
+      font-weight: 600;
+      margin-top: 4px;
+    }
+
+    /* ================= TABEL RESPONSIVE ================= */
+    .table-viewport {
+      overflow-x: auto;
+      border-radius: var(--radius-md);
+      border: 2px solid var(--yellow-border);
+      background: var(--white);
+    }
+
+    .data-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.88rem;
+    }
+
+    .data-table thead {
+      background: var(--navy-primary);
+      color: var(--yellow-border);
+    }
+
+    .data-table th {
+      padding: 1rem;
+      font-weight: 700;
+      text-align: left;
+      white-space: nowrap;
+    }
+
+    .data-table td {
+      padding: 1rem;
+      border-bottom: 1px solid var(--yellow-border);
+      vertical-align: middle;
+    }
+
+    .data-table tr:hover {
+      background: var(--yellow-surface);
+    }
+
+    .avatar-cell {
+      width: 48px;
+      height: 48px;
+      border-radius: var(--radius-sm);
+      object-fit: cover;
+      border: 2px solid var(--yellow-border-strong);
+      cursor: pointer;
+      transition: var(--transition);
+    }
+
+    .avatar-cell:hover {
+      transform: scale(1.15);
+    }
+
+    /* Status Badges */
+    .pill-badge {
+      display: inline-block;
+      padding: 0.3rem 0.75rem;
+      border-radius: 50px;
+      font-size: 0.72rem;
+      font-weight: 800;
+      letter-spacing: 0.5px;
+      text-transform: uppercase;
+    }
+
+    .pill-pending { background: #fef3c7; color: #92400e; border: 1px solid #fcd34d; }
+    .pill-approved { background: #dcfce7; color: #166534; border: 1px solid #86efac; }
+    .pill-rejected { background: #ffe4e6; color: #9f1239; border: 1px solid #fecdd3; }
+    .pill-checked_in { background: #dbeafe; color: #1e40af; border: 1px solid #93c5fd; }
+    .pill-completed { background: #f1f5f9; color: #475569; border: 1px solid #cbd5e1; }
+
+    /* ================= MODAL OVERLAYS ================= */
+    .modal-backdrop {
+      position: fixed;
+      inset: 0;
+      background: rgba(7, 21, 43, 0.75);
+      backdrop-filter: blur(6px);
+      display: none;
+      place-items: center;
+      z-index: 1000;
+      padding: 1.25rem;
+    }
+
+    .modal-backdrop.active {
+      display: grid;
+    }
+
+    .modal-window {
+      background: var(--white);
+      border: 3px solid var(--yellow-border-strong);
+      border-radius: var(--radius-xl);
+      max-width: 520px;
+      width: 100%;
+      overflow: hidden;
+      box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+      animation: modalPop 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    @keyframes modalPop {
+      from { opacity: 0; transform: translateY(-15px) scale(0.97); }
+      to { opacity: 1; transform: translateY(0) scale(1); }
+    }
+
+    .modal-top {
+      background: var(--navy-primary);
+      color: var(--yellow-border);
+      padding: 1.2rem 1.5rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .modal-close-btn {
+      background: transparent;
+      border: none;
+      color: var(--white);
+      font-size: 1.5rem;
+      cursor: pointer;
+    }
+
+    .modal-content {
+      padding: 1.5rem;
+    }
+
+    .modal-bottom {
+      background: var(--yellow-surface-card);
+      padding: 1rem 1.5rem;
+      border-top: 1px solid var(--yellow-border);
+      display: flex;
+      justify-content: flex-end;
+      gap: 0.75rem;
+    }
+
+    .conflict-flag {
+      background: var(--danger-bg);
+      border: 2px solid var(--danger);
+      color: #9f1239;
+      padding: 0.9rem;
+      border-radius: var(--radius-md);
+      font-size: 0.85rem;
+      margin-top: 1rem;
+      display: none;
+    }
+
+    /* Toast Notification */
+    .toast-tray {
+      position: fixed;
+      bottom: 2rem;
+      right: 2rem;
+      z-index: 2000;
+      display: flex;
+      flex-direction: column;
+      gap: 0.6rem;
+    }
+
+    .toast-card {
+      background: var(--navy-darkest);
+      color: var(--white);
+      padding: 0.9rem 1.4rem;
+      border-radius: var(--radius-md);
+      border-left: 5px solid var(--yellow-border-strong);
+      box-shadow: var(--shadow-hover);
+      font-size: 0.9rem;
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      animation: toastIn 0.3s ease;
+    }
+
+    @keyframes toastIn {
+      from { transform: translateX(100%); opacity: 0; }
+      to { transform: translateX(0); opacity: 1; }
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(8px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ================= HEADER PERMANEN DENGAN LOGO SEKOLAH ================= -->
+  <header class="app-header">
+    <div class="header-inner">
+      <div class="brand-cluster" onclick="showGateway()">
+        <div class="brand-symbol">🏛️</div>
+        <div>
+          <div class="brand-name">SI-TAMU PRESISI</div>
+          <div class="brand-tagline">Buku Tamu Digital & Agenda Pertemuan</div>
+        </div>
+      </div>
+
+      <!-- Komponen Logo Sekolah yang dapat di-upload/di-ganti melalui Variabel JavaScript -->
+      <div class="school-logo-hub">
+        <div class="school-meta">
+          <div class="school-name-text" id="displaySchoolName">SMA NEGERI TERPADU</div>
+          <div class="school-loc-text">Sistem Pelayanan Tamu & Pimpinan</div>
+        </div>
+        <div class="school-logo-frame">
+          <img id="schoolLogoElement" alt="Logo Sekolah" src="" />
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- ================= 1. GERBANG AWAL (DUAL-CHOICE SELECTOR VIEW) ================= -->
+  <section id="view-gateway" class="gateway-wrapper">
+    <div class="gateway-badge">
+      <span>✨</span> Selamat Datang di Pusat Layanan Audiensi Sekolah
+    </div>
+    <h1 class="gateway-heading">Pilih Gerbang <span>Akses Layanan</span></h1>
+    <p class="gateway-desc">
+      Silakan tentukan identitas Anda untuk melanjutkan. Tamu umum dapat langsung mengajukan janji temu, sedangkan pimpinan sekolah mengakses panel verifikasi.
+    </p>
+
+    <div class="gateway-cards">
+      
+      <!-- OPSI 1: PORTAL TAMU / PEMOHON -->
+      <div class="gate-card" onclick="openPortal('guest')">
+        <div>
+          <div class="gate-icon-frame">📝</div>
+          <h2 class="gate-title">Portal Tamu & Pemohon</h2>
+          <p class="gate-description">
+            Khusus bagi Orang Tua/Wali Murid, Siswa, Dinas Luar, maupun Rekanan yang ingin mengajukan permohonan audiensi resmi atau memantau status tiket janji temu yang telah diajukan.
+          </p>
+        </div>
+        <button class="gate-action-btn btn-gate-guest">
+          <span>Isi Buku Tamu / Lacak Tiket</span>
+          <span>➜</span>
+        </button>
+      </div>
+
+      <!-- OPSI 2: PORTAL ADMIN & KEPALA SEKOLAH -->
+      <div class="gate-card gate-card-admin" onclick="openPortal('host')">
+        <div>
+          <div class="gate-icon-frame">🔒</div>
+          <h2 class="gate-title">Portal Admin & Pimpinan</h2>
+          <p class="gate-description">
+            Akses privat terproteksi bagi Kepala Sekolah untuk evaluasi antrean permohonan, penetapan jadwal anti-benturan, serta modul pemindai presensi tamu di pos satpam lobi.
+          </p>
+        </div>
+        <button class="gate-action-btn btn-gate-admin">
+          <span>Login Dashboard Pimpinan</span>
+          <span>➜</span>
+        </button>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ================= 2. PORTAL TAMU (GUEST PORTAL SHELL) ================= -->
+  <section id="view-guest" class="portal-shell">
+    <div class="portal-action-bar">
+      <button class="btn-back-home" onclick="showGateway()">
+        <span>⬅</span> Kembali ke Menu Utama
+      </button>
+
+      <div class="sub-tabs">
+        <button class="sub-tab-btn active" id="btnTabGuestForm" onclick="switchGuestSubTab('form')">
+          ✍️ Formulir Tamu Baru
+        </button>
+        <button class="sub-tab-btn" id="btnTabGuestTrack" onclick="switchGuestSubTab('track')">
+          🔍 Lacak Status Mandiri
+        </button>
+      </div>
+    </div>
+
+    <!-- Sub 1: Form Registrasi -->
+    <div id="guestSubTabForm">
+      <div class="modern-card">
+        <div class="card-header-styled">
+          <div class="card-title-main">
+            <span>📋</span> Formulir Janji Temu Audiensi
+          </div>
+          <span class="elegant-badge">Portal Publik - Tanpa Akun</span>
+        </div>
+
+        <form id="appointmentForm" onsubmit="handleGuestSubmit(event)">
+          <div class="form-grid form-grid-2">
+            <div class="form-group">
+              <label class="form-label">Kategori Tamu <span class="req">*</span></label>
+              <select id="guestCategory" class="form-input" onchange="renderAdaptiveFields()" required>
+                <option value="" disabled selected>-- Pilih Kategori Identitas --</option>
+                <option value="SISWA">Siswa Sekolah</option>
+                <option value="WALI_MURID">Orang Tua / Wali Murid</option>
+                <option value="INSTANSI">Tamu Luar / Lembaga / Dinas</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label class="form-label" id="labelFullName">Nama Lengkap Pemohon <span class="req">*</span></label>
+              <input type="text" id="fullName" class="form-input" placeholder="Nama lengkap Anda" required />
+            </div>
+          </div>
+
+          <!-- Dynamic Adaptive Container -->
+          <div id="adaptiveFieldContainer" style="display:none;" class="adaptive-callout"></div>
+
+          <div class="form-grid form-grid-3" style="margin-top: 1.25rem;">
+            <div class="form-group">
+              <label class="form-label">WhatsApp Aktif <span class="req">*</span></label>
+              <input type="tel" id="whatsappNumber" class="form-input" placeholder="08xxxxxxxxxx" pattern="[0-9]{10,15}" required />
+            </div>
+
+            <div class="form-group">
+              <label class="form-label">Urgensi Pertemuan <span class="req">*</span></label>
+              <select id="urgencyLevel" class="form-input" required>
+                <option value="NORMAL">Biasa (Normal)</option>
+                <option value="IMPORTANT">Penting</option>
+                <option value="URGENT">Mendesak</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label class="form-label">Rencana Tanggal <span class="req">*</span></label>
+              <input type="date" id="requestedDate" class="form-input" required />
+            </div>
+          </div>
+
+          <div class="form-group" style="margin-top: 1.25rem;">
+            <label class="form-label">Keperluan / Pokok Audiensi <span class="req">*</span></label>
+            <textarea id="purpose" class="form-input" rows="3" placeholder="Sampaikan tujuan dan pokok pembicaraan audiensi Anda secara singkat dan jelas..." required></textarea>
+          </div>
+
+          <!-- Live WebRTC Camera Module -->
+          <div class="camera-frame">
+            <h4 style="color: var(--yellow-border-strong); font-size: 1.1rem; margin-bottom: 0.35rem;">
+              📸 Verifikasi Visual Biometrik (Live WebRTC)
+            </h4>
+            <p style="font-size: 0.8rem; color: #94a3b8;">
+              Keamanan Terpadu: Pengambilan foto wajah langsung melalui webcam. File upload lokal dilarang.
+            </p>
+
+            <div class="camera-viewport">
+              <video id="cameraVideo" autoplay playsinline></video>
+              <div id="silhouetteGuide" class="face-oval-guide" style="display:none;"></div>
+              <img id="snapshotImagePreview" alt="Snapshot" />
+              <canvas id="cameraCanvas"></canvas>
+            </div>
+
+            <div class="btn-group-camera">
+              <button type="button" id="btnOpenCamera" class="btn btn-gold" onclick="startCamera()">
+                🎥 Buka Kamera Langsung
+              </button>
+              <button type="button" id="btnCapturePhoto" class="btn btn-navy" style="display:none;" onclick="takeSnapshot()">
+                ⚡ Ambil Foto Sekarang
+              </button>
+              <button type="button" id="btnRetakePhoto" class="btn btn-secondary btn-sm" style="display:none;" onclick="retakePhoto()">
+                🔄 Ambil Ulang Foto
+              </button>
+            </div>
+
+            <div id="cameraDeniedAlert" style="display:none; margin-top: 1rem;">
+              <small style="color:var(--yellow-border); display:block; margin-bottom:0.4rem;">
+                ⚠️ Kamera tidak dapat diakses pada browser ini. Anda dapat menguji fungsi submit dengan simulasi potret:
+              </small>
+              <button type="button" class="btn btn-gold btn-sm" onclick="generateSimulatedCapture()">
+                🪄 Gunakan Foto Simulasi Biometrik
+              </button>
+            </div>
+
+            <input type="hidden" id="faceSnapshotData" required />
+          </div>
+
+          <div style="text-align: right; margin-top: 1.5rem;">
+            <button type="submit" class="btn btn-navy" style="padding: 1rem 2.5rem; font-size: 1rem;">
+              🚀 Kirimkan Permohonan Pertemuan
+            </button>
+          </div>
+        </form>
+      </div>
+
+      <!-- Tiket Sukses -->
+      <div id="successTicketCard" class="modern-card" style="display:none; margin-top: 1.75rem; text-align: center; border-color: var(--yellow-border-strong);">
+        <div style="font-size: 2.75rem;">🎉</div>
+        <h2 style="color: var(--navy-darkest); font-size: 1.8rem; margin: 0.5rem 0;">Permohonan Terdaftar Resmi!</h2>
+        <p style="color: var(--text-muted); font-size: 0.95rem;">Simpan nomor tiket berikut untuk melacak status audiensi Anda:</p>
+
+        <div style="background: var(--white); border: 2px dashed var(--yellow-accent); border-radius: var(--radius-lg); padding: 1.75rem; max-width: 480px; margin: 1.5rem auto;">
+          <div style="font-size: 0.8rem; font-weight: 800; color: var(--text-muted);">KODE TIKET RESMI</div>
+          <div style="font-size: 1.8rem; font-weight: 800; font-family: monospace; color: var(--navy-darkest); margin: 0.5rem 0;" id="issuedTicketCode">TKT-XXXX</div>
+          <p id="issuedGuestDetail" style="font-size: 0.88rem; color: var(--navy-primary);"></p>
+
+          <div id="ticketQrPreview" style="width: 140px; height: 140px; margin: 1rem auto; background: var(--white); border-radius: 12px; padding: 6px; border: 2px solid var(--navy-primary);"></div>
+          <small style="color: var(--text-muted); font-size: 0.75rem;">Tunjukkan QR Code ini kepada Satpam / Petugas Lobi saat tiba di sekolah.</small>
+        </div>
+
+        <button class="btn btn-navy" onclick="directToTracking()">
+          🔍 Lacak Status Tiket Ini Sekarang
+        </button>
+      </div>
+    </div>
+
+    <!-- Sub 2: Lacak Mandiri -->
+    <div id="guestSubTabTrack" style="display:none;">
+      <div class="modern-card" style="max-width: 640px; margin: 0 auto;">
+        <div class="card-header-styled">
+          <div class="card-title-main">
+            <span>🔍</span> Lacak Tiket Janji Temu Mandiri
+          </div>
+        </div>
+
+        <p style="font-size: 0.88rem; color: var(--text-muted); margin-bottom: 1.25rem;">
+          Masukkan Kode Tiket serta 4 digit terakhir nomor WhatsApp pendaftar untuk memverifikasi status pertemuan Anda:
+        </p>
+
+        <form onsubmit="handleTrackTicket(event)">
+          <div class="form-grid form-grid-2">
+            <div class="form-group">
+              <label class="form-label">Kode Tiket</label>
+              <input type="text" id="trackTicketInput" class="form-input" placeholder="Contoh: TKT-2026-X8K9" required style="text-transform: uppercase;" />
+            </div>
+            <div class="form-group">
+              <label class="form-label">4 Digit Terakhir No. WA</label>
+              <input type="text" id="trackPhoneInput" class="form-input" placeholder="Contoh: 7890" maxlength="4" pattern="[0-9]{4}" required />
+            </div>
+          </div>
+          <button type="submit" class="btn btn-navy" style="width: 100%; margin-top: 1.25rem;">
+            Periksa Status Sekarang
+          </button>
+        </form>
+
+        <div id="trackingResultBox" style="display:none; margin-top: 1.75rem;"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= 3. PORTAL ADMIN / HOST (KEPALA SEKOLAH & LOBI) ================= -->
+  <section id="view-host" class="portal-shell">
+    <div class="portal-action-bar">
+      <button class="btn-back-home" onclick="showGateway()">
+        <span>⬅</span> Kembali ke Menu Utama
+      </button>
+
+      <div class="sub-tabs" id="hostTabControls" style="display:none;">
+        <button class="sub-tab-btn active" id="btnHostTabDashboard" onclick="switchHostSubTab('dashboard')">
+          📊 Dashboard Pimpinan
+        </button>
+        <button class="sub-tab-btn" id="btnHostTabScanner" onclick="switchHostSubTab('scanner')">
+          🛡️ Simulator Presensi Satpam
+        </button>
+      </div>
+    </div>
+
+    <!-- Sub A: Login Box -->
+    <div id="hostLoginBox" class="modern-card" style="max-width: 440px; margin: 2rem auto;">
+      <div class="card-header-styled" style="justify-content: center; text-align: center;">
+        <div class="card-title-main">
+          <span>🔐</span> Login Pimpinan Sekolah
+        </div>
+      </div>
+
+      <p style="font-size: 0.85rem; color: var(--text-muted); text-align: center; margin-bottom: 1.25rem;">
+        Masukkan kredensial resmi Kepala Sekolah untuk mengakses data dan konfirmasi agenda.
+      </p>
+
+      <form onsubmit="handleHostLogin(event)">
+        <div class="form-group" style="margin-bottom: 1rem;">
+          <label class="form-label">Username</label>
+          <input type="text" id="adminUsername" class="form-input" placeholder="Username" required />
+        </div>
+        <div class="form-group" style="margin-bottom: 1rem;">
+          <label class="form-label">Password</label>
+          <input type="password" id="adminPassword" class="form-input" placeholder="Password" required />
+        </div>
+
+        <div id="loginErrorMessage" style="display:none; color: var(--danger); font-size: 0.82rem; font-weight: 700; margin-bottom: 1rem;">
+          ❌ Username atau Password salah!
+        </div>
+
+        <button type="submit" class="btn btn-navy" style="width: 100%;">
+          Masuk ke Portal Pimpinan
+        </button>
+      </form>
+
+      <div style="margin-top: 1.5rem; padding: 0.85rem; background: var(--yellow-surface-elevated); border-radius: var(--radius-sm); font-size: 0.78rem; color: var(--navy-darkest);">
+        <strong>Kredensial Statis Terdaftar:</strong><br />
+        Username: <code>kepsek123</code> &nbsp;|&nbsp; Password: <code>suki1234</code>
+      </div>
+    </div>
+
+    <!-- Sub B: Dashboard Utama Kepala Sekolah -->
+    <div id="hostDashboardBox" style="display:none;">
+      <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1.5rem; flex-wrap: wrap; gap: 1rem;">
+        <div>
+          <h2 style="font-size: 1.8rem; font-weight: 800; color: var(--navy-darkest);">Panel Kerja Kepala Sekolah</h2>
+          <p style="color: var(--text-muted); font-size: 0.9rem;">Evaluasi audiensi, penetapan jadwal anti-benturan, dan disposisi ruangan.</p>
+        </div>
+        <button class="btn btn-danger btn-sm" onclick="handleHostLogout()">
+          🚪 Akhiri Sesi (Logout)
+        </button>
+      </div>
+
+      <!-- Ringkasan Metrik -->
+      <div class="metric-cluster">
+        <div class="stat-card">
+          <div class="stat-icon">📊</div>
+          <div>
+            <div class="stat-num" id="metricTotal">0</div>
+            <div class="stat-text">Total Permohonan</div>
+          </div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-icon" style="background:#fef3c7; color:#92400e;">⏳</div>
+          <div>
+            <div class="stat-num" id="metricPending">0</div>
+            <div class="stat-text">Menunggu Persetujuan</div>
+          </div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-icon" style="background:#dcfce7; color:#166534;">✅</div>
+          <div>
+            <div class="stat-num" id="metricApproved">0</div>
+            <div class="stat-text">Disetujui / Terjadwal</div>
+          </div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-icon" style="background:#dbeafe; color:#1e40af;">🏁</div>
+          <div>
+            <div class="stat-num" id="metricCompleted">0</div>
+            <div class="stat-text">Selesai / Checked-In</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Tabel Antrean Audiensi -->
+      <div class="modern-card" style="padding: 1.5rem;">
+        <div class="card-header-styled">
+          <div class="card-title-main">
+            <span>📋</span> Antrean Pengajuan Audiensi Tamu
+          </div>
+          <select id="filterStatus" class="form-input" style="padding: 0.4rem 0.8rem; font-size: 0.85rem;" onchange="renderAdminTable()">
+            <option value="ALL">Semua Status</option>
+            <option value="PENDING">Pending (Menunggu)</option>
+            <option value="APPROVED">Disetujui</option>
+            <option value="CHECKED_IN">Checked-In</option>
+            <option value="REJECTED">Ditolak</option>
+            <option value="COMPLETED">Selesai</option>
+          </select>
+        </div>
+
+        <div class="table-viewport">
+          <table class="data-table">
+            <thead>
+              <tr>
+                <th>Potret Wajah</th>
+                <th>Kode Tiket</th>
+                <th>Identitas Tamu</th>
+                <th>Kategori</th>
+                <th>Perihal & Urgensi</th>
+                <th>Jadwal / Ruang</th>
+                <th>Status</th>
+                <th>Aksi Disposisi</th>
+              </tr>
+            </thead>
+            <tbody id="adminTableBody"></tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+
+    <!-- Sub C: Simulator Presensi Lobi Satpam -->
+    <div id="hostScannerBox" style="display:none;">
+      <div class="modern-card" style="max-width: 680px; margin: 0 auto;">
+        <div class="card-header-styled">
+          <div class="card-title-main">
+            <span>🛡️</span> Pos Keamanan / Resepsionis Lobi
+          </div>
+          <span class="elegant-badge">Lobby Kiosk Mode</span>
+        </div>
+
+        <p style="font-size: 0.88rem; color: var(--text-muted); margin-bottom: 1.25rem;">
+          Petugas keamanan memverifikasi kesesuaian fisik tamu dengan foto biometrik saat kedatangan dan mencatat presensi resmi.
+        </p>
+
+        <div style="display:flex; gap:0.6rem; max-width:440px; margin: 0 auto 1.5rem;">
+          <input type="text" id="scanTicketInput" class="form-input" placeholder="Masukkan Kode Tiket..." style="text-transform:uppercase;" />
+          <button class="btn btn-navy" onclick="handleScanTicket()">Pindai</button>
+        </div>
+
+        <div id="scanResultScreen" style="display:none; background:var(--navy-darkest); color:var(--white); border-radius:var(--radius-lg); padding:1.5rem; border:2px solid var(--yellow-border-strong);">
+          <div style="display:flex; gap:1.25rem; align-items:center; flex-wrap:wrap;">
+            <img id="scanFaceImg" src="" alt="Capture" style="width:110px; height:130px; object-fit:cover; border-radius:10px; border:2px solid var(--yellow-border-strong);" />
+            <div style="flex:1; min-width:240px;">
+              <div style="display:flex; gap:0.5rem; margin-bottom:0.35rem;">
+                <span id="scanTicketBadge" class="pill-badge pill-approved">TKT-XXXX</span>
+                <span id="scanStatusBadge" class="pill-badge">STATUS</span>
+              </div>
+              <h3 id="scanGuestName" style="color:var(--yellow-border); font-size:1.25rem;">Nama Tamu</h3>
+              <p id="scanCategory" style="font-size:0.8rem; color:#94a3b8;"></p>
+              <p id="scanSchedule" style="font-size:0.85rem; color:var(--white); margin-top:0.35rem;"></p>
+              <p id="scanRoom" style="font-weight:700; color:var(--yellow-border-strong); font-size:0.85rem;"></p>
+            </div>
+          </div>
+
+          <div style="margin-top:1.5rem; display:flex; gap:0.75rem; justify-content:flex-end; flex-wrap:wrap;">
+            <button id="btnConfirmCheckin" class="btn btn-gold" onclick="confirmCheckin()">
+              ✅ Konfirmasi Check-In Fisik
+            </button>
+            <button id="btnConfirmCheckout" class="btn btn-secondary" onclick="confirmCheckout()">
+              🏁 Selesaikan Pertemuan (Check-Out)
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= MODAL PENETAPAN JADWAL (ANTI-BENTURAN) ================= -->
+  <div id="scheduleModal" class="modal-backdrop">
+    <div class="modal-window">
+      <div class="modal-top">
+        <div style="font-weight:800;" id="scheduleModalTitle">🗓️ Penetapan Waktu Audiensi</div>
+        <button class="modal-close-btn" onclick="closeModal('scheduleModal')">&times;</button>
+      </div>
+      <form onsubmit="handleScheduleSubmit(event)">
+        <div class="modal-content">
+          <input type="hidden" id="modalAppointmentId" />
+          <input type="hidden" id="modalActionType" value="APPROVE" />
+
+          <div style="background:var(--yellow-surface-card); padding:0.85rem; border-radius:var(--radius-sm); border:1px solid var(--yellow-border); font-size:0.85rem; margin-bottom:1rem;">
+            <strong>Pemohon:</strong> <span id="modalGuestInfo"></span><br />
+            <strong>Pokok Audiensi:</strong> <span id="modalPurposeInfo"></span>
+          </div>
+
+          <div class="form-group" style="margin-bottom:0.85rem;">
+            <label class="form-label">Ruangan Pertemuan <span class="req">*</span></label>
+            <select id="modalRoom" class="form-input" required onchange="checkScheduleCollision()">
+              <option value="Ruang Tamu Utama Kepala Sekolah">Ruang Tamu Utama Kepala Sekolah</option>
+              <option value="Ruang Rapat Pimpinan (VIP)">Ruang Rapat Pimpinan (VIP)</option>
+              <option value="Ruang Konseling & Komite Sekolah">Ruang Konseling & Komite Sekolah</option>
+            </select>
+          </div>
+
+          <div class="form-group" style="margin-bottom:0.85rem;">
+            <label class="form-label">Tanggal Pertemuan <span class="req">*</span></label>
+            <input type="date" id="modalDate" class="form-input" required onchange="checkScheduleCollision()" />
+          </div>
+
+          <div class="form-grid form-grid-2">
+            <div class="form-group">
+              <label class="form-label">Jam Mulai <span class="req">*</span></label>
+              <input type="time" id="modalStartTime" class="form-input" required onchange="checkScheduleCollision()" />
+            </div>
+            <div class="form-group">
+              <label class="form-label">Jam Selesai <span class="req">*</span></label>
+              <input type="time" id="modalEndTime" class="form-input" required onchange="checkScheduleCollision()" />
+            </div>
+          </div>
+
+          <!-- Banner Anti-Benturan -->
+          <div id="collisionAlert" class="conflict-flag">
+            <strong>⚠️ PERINGATAN BENTURAN JADWAL (COLLISION):</strong>
+            <p id="collisionText" style="margin-top:0.25rem;">Ruangan tersebut telah dialokasikan untuk tamu lain pada jam ini.</p>
+          </div>
+        </div>
+
+        <div class="modal-bottom">
+          <button type="button" class="btn btn-secondary" onclick="closeModal('scheduleModal')">Batal</button>
+          <button type="submit" id="btnSaveSchedule" class="btn btn-navy">Konfirmasi & Kunci Jadwal</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- ================= MODAL PENOLAKAN DENGAN ALASAN WAJIB ================= -->
+  <div id="rejectModal" class="modal-backdrop">
+    <div class="modal-window">
+      <div class="modal-top" style="background:var(--danger);">
+        <div style="font-weight:800; color:var(--white);">🚫 Penolakan Audiensi Tamu</div>
+        <button class="modal-close-btn" onclick="closeModal('rejectModal')">&times;</button>
+      </div>
+      <form onsubmit="handleRejectSubmit(event)">
+        <div class="modal-content">
+          <input type="hidden" id="rejectAppointmentId" />
+          <p style="font-size:0.85rem; color:var(--text-muted); margin-bottom:0.85rem;">
+            Sesuai standar operasional, penolakan wajib menyertakan alasan resmi yang akan diteruskan ke tamu via sistem notifikasi:
+          </p>
+          <div class="form-group">
+            <label class="form-label">Alasan Penolakan <span class="req">*</span></label>
+            <textarea id="rejectionReasonInput" class="form-input" rows="3" placeholder="Contoh: Kepala Sekolah terjadwal agenda luar kota dinas provinsi..." required></textarea>
+          </div>
+        </div>
+        <div class="modal-bottom">
+          <button type="button" class="btn btn-secondary" onclick="closeModal('rejectModal')">Batal</button>
+          <button type="submit" class="btn btn-danger">Tolak Permohonan</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- ================= MODAL PERBESAR FOTO ================= -->
+  <div id="photoModal" class="modal-backdrop" onclick="closeModal('photoModal')">
+    <div class="modal-window" style="max-width:380px; text-align:center; padding:1.5rem;">
+      <h3 style="color:var(--navy-darkest); margin-bottom:0.85rem;">Verifikasi Biometrik</h3>
+      <img id="enlargedPhoto" src="" alt="Face" style="width:100%; border-radius:12px; border:3px solid var(--yellow-border-strong);" />
+      <button class="btn btn-navy btn-sm" style="margin-top:1rem;" onclick="closeModal('photoModal')">Tutup</button>
+    </div>
+  </div>
+
+  <!-- ================= TOAST NOTIFICATION CONTAINER ================= -->
+  <div id="toastContainer" class="toast-tray"></div>
+
+  <!-- ================= JAVASCRIPT LOGIC ================= -->
+  <script>
+    /* ==========================================================================
+       VARIABEL LOGO & IDENTITAS SEKOLAH (Ubah di sini sesuai kebutuhan)
+       ========================================================================== */
+    const SCHOOL_LOGO_CONFIG = "data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><polygon points='50,5 95,25 95,75 50,95 5,75 5,25' fill='%230f274a' stroke='%23facc15' stroke-width='6'/><polygon points='50,15 85,32 85,68 50,85 15,68 15,32' fill='%23facc15'/><text x='50' y='58' font-size='38' text-anchor='middle' fill='%2307152b' font-family='sans-serif' font-weight='900'>S</text></svg>";
+    const SCHOOL_NAME_CONFIG = "SMA NEGERI TERPADU";
+
+    const STORAGE_KEY = "si_tamu_appointments_v2";
+    const AUTH_SESSION_KEY = "si_tamu_host_auth_session";
+
+    document.addEventListener("DOMContentLoaded", () => {
+      // Inisialisasi Logo dan Nama Sekolah
+      const logoEl = document.getElementById("schoolLogoElement");
+      const nameEl = document.getElementById("displaySchoolName");
+      if (logoEl) logoEl.src = SCHOOL_LOGO_CONFIG;
+      if (nameEl) nameEl.textContent = SCHOOL_NAME_CONFIG;
+
+      const today = new Date().toISOString().split("T")[0];
+      const reqDate = document.getElementById("requestedDate");
+      if (reqDate) reqDate.min = today;
+
+      initStorage();
+      updateDashboardStats();
+    });
+
+    /* ================= NAVIGASI ANTAR GERBANG ================= */
+    function showGateway() {
+      stopCamera();
+      document.getElementById("view-gateway").style.display = "block";
+      document.getElementById("view-guest").classList.remove("active");
+      document.getElementById("view-host").classList.remove("active");
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    }
+
+    function openPortal(type) {
+      document.getElementById("view-gateway").style.display = "none";
+
+      if (type === "guest") {
+        document.getElementById("view-guest").classList.add("active");
+        document.getElementById("view-host").classList.remove("active");
+        switchGuestSubTab("form");
+      } else if (type === "host") {
+        document.getElementById("view-host").classList.add("active");
+        document.getElementById("view-guest").classList.remove("active");
+        checkHostAuth();
+      }
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    }
+
+    function switchGuestSubTab(sub) {
+      stopCamera();
+      const isForm = sub === "form";
+      document.getElementById("guestSubTabForm").style.display = isForm ? "block" : "none";
+      document.getElementById("guestSubTabTrack").style.display = isForm ? "none" : "block";
+
+      document.getElementById("btnTabGuestForm").className = `sub-tab-btn ${isForm ? 'active' : ''}`;
+      document.getElementById("btnTabGuestTrack").className = `sub-tab-btn ${!isForm ? 'active' : ''}`;
+    }
+
+    function switchHostSubTab(sub) {
+      const isDashboard = sub === "dashboard";
+      document.getElementById("hostDashboardBox").style.display = isDashboard ? "block" : "none";
+      document.getElementById("hostScannerBox").style.display = isDashboard ? "none" : "block";
+
+      document.getElementById("btnHostTabDashboard").className = `sub-tab-btn ${isDashboard ? 'active' : ''}`;
+      document.getElementById("btnHostTabScanner").className = `sub-tab-btn ${!isDashboard ? 'active' : ''}`;
+    }
+
+    /* ================= STORAGE & SEED DATA ================= */
+    function initStorage() {
+      if (!localStorage.getItem(STORAGE_KEY)) {
+        const seed = [
+          {
+            id: "seed-1",
+            ticketCode: "TKT-2026-X8K9",
+            category: "WALI_MURID",
+            fullName: "Hj. Siti Rahmawati",
+            phone: "081234567890",
+            parentOfStudent: "Dimas Aditya",
+            studentClass: "X MIPA 2",
+            institutionName: "-",
+            officeAddress: "-",
+            studentNisn: "-",
+            urgency: "IMPORTANT",
+            purpose: "Konsultasi persiapan olimpiade sains dan beasiswa.",
+            faceSnapshot: "data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='160' height='200'><rect width='100%25' height='100%25' fill='%230f274a'/><circle cx='80' cy='70' r='40' fill='%23fde047'/><rect x='40' y='125' width='80' height='60' rx='20' fill='%23facc15'/></svg>",
+            requestedDate: "2026-09-15",
+            status: "APPROVED",
+            scheduledDate: "2026-09-15",
+            scheduledStart: "09:00",
+            scheduledEnd: "10:00",
+            room: "Ruang Tamu Utama Kepala Sekolah",
+            rejectionReason: "",
+            checkInAt: null,
+            createdAt: "2026-09-14 08:30:00"
+          }
+        ];
+        localStorage.setItem(STORAGE_KEY, JSON.stringify(seed));
+      }
+    }
+
+    function getAll() {
+      return JSON.parse(localStorage.getItem(STORAGE_KEY) || "[]");
+    }
+
+    function saveAll(items) {
+      localStorage.setItem(STORAGE_KEY, JSON.stringify(items));
+      updateDashboardStats();
+    }
+
+    /* ================= ADAPTIVE GUEST FIELDS ================= */
+    function renderAdaptiveFields() {
+      const cat = document.getElementById("guestCategory").value;
+      const c = document.getElementById("adaptiveFieldContainer");
+      const lbl = document.getElementById("labelFullName");
+
+      if (!cat) { c.style.display = "none"; return; }
+      c.style.display = "block";
+
+      if (cat === "SISWA") {
+        lbl.innerHTML = 'Nama Lengkap Siswa <span class="req">*</span>';
+        c.innerHTML = `
+          <div class="form-grid form-grid-2">
+            <div class="form-group">
+              <label class="form-label">Kelas Siswa <span class="req">*</span></label>
+              <input type="text" id="adaptClass" class="form-input" placeholder="Contoh: X MIPA 1" required />
+            </div>
+            <div class="form-group">
+              <label class="form-label">NISN Siswa (10 Digit) <span class="req">*</span></label>
+              <input type="text" id="adaptNisn" class="form-input" placeholder="10 Digit NISN" pattern="[0-9]{10}" required />
+            </div>
+          </div>`;
+      } else if (cat === "WALI_MURID") {
+        lbl.innerHTML = 'Nama Lengkap Orang Tua / Wali <span class="req">*</span>';
+        c.innerHTML = `
+          <div class="form-grid form-grid-2">
+            <div class="form-group">
+              <label class="form-label">Nama Siswa yang Diwakili <span class="req">*</span></label>
+              <input type="text" id="adaptStudentName" class="form-input" placeholder="Nama putra/putri Anda" required />
+            </div>
+            <div class="form-group">
+              <label class="form-label">Kelas Siswa <span class="req">*</span></label>
+              <input type="text" id="adaptClass" class="form-input" placeholder="Contoh: XI IPS 3" required />
+            </div>
+          </div>`;
+      } else if (cat === "INSTANSI") {
+        lbl.innerHTML = 'Nama Lengkap Perwakilan <span class="req">*</span>';
+        c.innerHTML = `
+          <div class="form-grid form-grid-2">
+            <div class="form-group">
+              <label class="form-label">Nama Instansi / Dinas / Perusahaan <span class="req">*</span></label>
+              <input type="text" id="adaptInstitution" class="form-input" placeholder="Contoh: Dinas Pendidikan Provinsi" required />
+            </div>
+            <div class="form-group">
+              <label class="form-label">Alamat Kantor Instansi <span class="req">*</span></label>
+              <input type="text" id="adaptAddress" class="form-input" placeholder="Alamat kantor perwakilan" required />
+            </div>
+          </div>`;
+      }
+    }
+
+    /* ================= WEBRTC LIVE CAMERA ================= */
+    let videoStream = null;
+
+    async function startCamera() {
+      const vid = document.getElementById("cameraVideo");
+      const guide = document.getElementById("silhouetteGuide");
+      const btnOpen = document.getElementById("btnOpenCamera");
+      const btnCap = document.getElementById("btnCapturePhoto");
+      const btnRet = document.getElementById("btnRetakePhoto");
+      const prev = document.getElementById("snapshotImagePreview");
+      const alertD = document.getElementById("cameraDeniedAlert");
+
+      prev.style.display = "none";
+      vid.style.display = "block";
+      alertD.style.display = "none";
+
+      try {
+        if (!navigator.mediaDevices?.getUserMedia) throw new Error("Akses kamera tidak didukung.");
+
+        videoStream = await navigator.mediaDevices.getUserMedia({
+          video: { facingMode: "user", width: { ideal: 640 }, height: { ideal: 480 } },
+          audio: false
+        });
+
+        vid.srcObject = videoStream;
+        await vid.play();
+
+        guide.style.display = "block";
+        btnOpen.style.display = "none";
+        btnCap.style.display = "inline-flex";
+        btnRet.style.display = "none";
+        triggerToast("Kamera WebRTC terhubung.");
+      } catch (e) {
+        alertD.style.display = "block";
+        triggerToast("Izin kamera ditolak atau perangkat tidak ditemukan.", "danger");
+      }
+    }
+
+    function stopCamera() {
+      if (videoStream) {
+        videoStream.getTracks().forEach(t => t.stop());
+        videoStream = null;
+      }
+    }
+
+    function takeSnapshot() {
+      const vid = document.getElementById("cameraVideo");
+      const canvas = document.getElementById("cameraCanvas");
+      const prev = document.getElementById("snapshotImagePreview");
+      const guide = document.getElementById("silhouetteGuide");
+      const hidden = document.getElementById("faceSnapshotData");
+
+      canvas.width = vid.videoWidth;
+      canvas.height = vid.videoHeight;
+      const ctx = canvas.getContext("2d");
+
+      ctx.translate(canvas.width, 0);
+      ctx.scale(-1, 1);
+      ctx.drawImage(vid, 0, 0, canvas.width, canvas.height);
+
+      const base64 = canvas.toDataURL("image/jpeg", 0.85);
+      hidden.value = base64;
+      prev.src = base64;
+      prev.style.display = "block";
+      vid.style.display = "none";
+      guide.style.display = "none";
+
+      stopCamera();
+      document.getElementById("btnCapturePhoto").style.display = "none";
+      document.getElementById("btnRetakePhoto").style.display = "inline-flex";
+      triggerToast("Foto biometrik berhasil ditangkap!");
+    }
+
+    function retakePhoto() {
+      document.getElementById("faceSnapshotData").value = "";
+      startCamera();
+    }
+
+    function generateSimulatedCapture() {
+      const canvas = document.createElement("canvas");
+      canvas.width = 300;
+      canvas.height = 300;
+      const ctx = canvas.getContext("2d");
+
+      ctx.fillStyle = "#0f274a";
+      ctx.fillRect(0, 0, 300, 300);
+      ctx.fillStyle = "#facc15";
+      ctx.beginPath();
+      ctx.arc(150, 110, 50, 0, Math.PI * 2);
+      ctx.fill();
+      ctx.beginPath();
+      ctx.arc(150, 240, 80, 0, Math.PI * 2);
+      ctx.fill();
+
+      const mock = canvas.toDataURL("image/jpeg", 0.85);
+      document.getElementById("faceSnapshotData").value = mock;
+      document.getElementById("snapshotImagePreview").src = mock;
+      document.getElementById("snapshotImagePreview").style.display = "block";
+      document.getElementById("cameraVideo").style.display = "none";
+      document.getElementById("silhouetteGuide").style.display = "none";
+
+      document.getElementById("btnOpenCamera").style.display = "none";
+      document.getElementById("btnCapturePhoto").style.display = "none";
+      document.getElementById("btnRetakePhoto").style.display = "inline-flex";
+      triggerToast("Simulasi biometrik berhasil disiapkan.");
+    }
+
+    /* ================= SUBMIT TAMU ================= */
+    function makeTicketCode() {
+      const year = new Date().getFullYear();
+      const chars = "ABCDEFGHJKLMNPQRSTUVWXYZ23456789";
+      let res = "";
+      for (let i = 0; i < 4; i++) res += chars.charAt(Math.floor(Math.random() * chars.length));
+      return `TKT-${year}-${res}`;
+    }
+
+    function handleGuestSubmit(e) {
+      e.preventDefault();
+      const photo = document.getElementById("faceSnapshotData").value;
+      if (!photo) {
+        triggerToast("Wajib mengambil foto wajah terlebih dahulu!", "danger");
+        return;
+      }
+
+      const category = document.getElementById("guestCategory").value;
+      const fullName = document.getElementById("fullName").value.trim();
+      const phone = document.getElementById("whatsappNumber").value.trim();
+      const urgency = document.getElementById("urgencyLevel").value;
+      const requestedDate = document.getElementById("requestedDate").value;
+      const purpose = document.getElementById("purpose").value.trim();
+
+      const studentClass = document.getElementById("adaptClass")?.value.trim() || "-";
+      const studentNisn = document.getElementById("adaptNisn")?.value.trim() || "-";
+      const parentOfStudent = document.getElementById("adaptStudentName")?.value.trim() || "-";
+      const institutionName = document.getElementById("adaptInstitution")?.value.trim() || "-";
+      const officeAddress = document.getElementById("adaptAddress")?.value.trim() || "-";
+
+      const ticketCode = makeTicketCode();
+
+      const newRecord = {
+        id: "rec-" + Date.now(),
+        ticketCode,
+        category,
+        fullName,
+        phone,
+        studentClass,
+        studentNisn,
+        parentOfStudent,
+        institutionName,
+        officeAddress,
+        urgency,
+        purpose,
+        faceSnapshot: photo,
+        requestedDate,
+        status: "PENDING",
+        scheduledDate: "",
+        scheduledStart: "",
+        scheduledEnd: "",
+        room: "",
+        rejectionReason: "",
+        checkInAt: null,
+        createdAt: new Date().toLocaleString("id-ID")
+      };
+
+      const all = getAll();
+      all.unshift(newRecord);
+      saveAll(all);
+
+      document.getElementById("issuedTicketCode").textContent = ticketCode;
+      document.getElementById("issuedGuestDetail").textContent = `${fullName} (${category}) - ${purpose.substring(0, 45)}...`;
+      renderMiniQr("ticketQrPreview", ticketCode);
+
+      document.getElementById("successTicketCard").style.display = "block";
+      document.getElementById("appointmentForm").reset();
+      document.getElementById("adaptiveFieldContainer").style.display = "none";
+      document.getElementById("snapshotImagePreview").style.display = "none";
+      document.getElementById("btnOpenCamera").style.display = "inline-flex";
+      document.getElementById("btnCapturePhoto").style.display = "none";
+      document.getElementById("btnRetakePhoto").style.display = "none";
+      document.getElementById("faceSnapshotData").value = "";
+
+      triggerToast("Permohonan berhasil diajukan!");
+      document.getElementById("successTicketCard").scrollIntoView({ behavior: "smooth" });
+    }
+
+    function directToTracking() {
+      const code = document.getElementById("issuedTicketCode").textContent;
+      switchGuestSubTab("track");
+      document.getElementById("trackTicketInput").value = code;
+    }
+
+    /* ================= LACAK STATUS MANDIRI ================= */
+    function handleTrackTicket(e) {
+      e.preventDefault();
+      const code = document.getElementById("trackTicketInput").value.trim().toUpperCase();
+      const phoneDigits = document.getElementById("trackPhoneInput").value.trim();
+      const box = document.getElementById("trackingResultBox");
+
+      const item = getAll().find(x => x.ticketCode === code);
+      if (!item) {
+        box.style.display = "block";
+        box.innerHTML = `<div style="background:var(--danger-bg); border:2px solid var(--danger); padding:1rem; border-radius:12px; color:#9f1239; text-align:center;">❌ Tiket ${code} tidak terdaftar.</div>`;
+        return;
+      }
+
+      const last4 = item.phone.replace(/\D/g, "").slice(-4);
+      if (last4 !== phoneDigits) {
+        box.style.display = "block";
+        box.innerHTML = `<div style="background:var(--danger-bg); border:2px solid var(--danger); padding:1rem; border-radius:12px; color:#9f1239; text-align:center;">❌ 4 digit nomor WhatsApp tidak cocok!</div>`;
+        return;
+      }
+
+      let extraInfo = "";
+      if (item.status === "APPROVED" || item.status === "CHECKED_IN") {
+        extraInfo = `<div style="margin-top:0.85rem; padding:0.85rem; background:var(--yellow-surface-elevated); border-radius:10px;">
+          <strong>Ruangan:</strong> ${item.room}<br/>
+          <strong>Waktu:</strong> ${item.scheduledDate} (${item.scheduledStart} - ${item.scheduledEnd} WIB)
+        </div>`;
+      } else if (item.status === "REJECTED") {
+        extraInfo = `<div style="margin-top:0.85rem; padding:0.85rem; background:var(--danger-bg); color:#9f1239; border-radius:10px;">
+          <strong>Alasan Penolakan:</strong> ${item.rejectionReason}
+        </div>`;
+      }
+
+      box.style.display = "block";
+      box.innerHTML = `
+        <div style="background:var(--white); border:2px solid var(--yellow-border-strong); border-radius:14px; padding:1.25rem;">
+          <div style="display:flex; justify-content:space-between; align-items:center;">
+            <div>
+              <span class="pill-badge pill-${item.status.toLowerCase()}">${item.status}</span>
+              <strong style="margin-left:0.5rem; color:var(--navy-darkest);">${item.ticketCode}</strong>
+            </div>
+            <span style="font-size:0.75rem; font-weight:700;">${item.urgency}</span>
+          </div>
+          <div style="display:flex; gap:1rem; margin-top:1rem; align-items:center;">
+            <img src="${item.faceSnapshot}" style="width:65px; height:80px; object-fit:cover; border-radius:8px; border:2px solid var(--yellow-border-strong);" />
+            <div>
+              <h4 style="color:var(--navy-darkest);">${maskStr(item.fullName)}</h4>
+              <p style="font-size:0.82rem; color:var(--text-muted);">${item.purpose}</p>
+            </div>
+          </div>
+          ${extraInfo}
+          <div id="trackResultQr" style="width:120px; height:120px; margin:1rem auto 0; border:2px solid var(--navy-primary); border-radius:8px; padding:4px;"></div>
+        </div>`;
+      renderMiniQr("trackResultQr", item.ticketCode);
+    }
+
+    function maskStr(s) {
+      return s.length > 4 ? s.substring(0, 3) + "***" + s.slice(-1) : s;
+    }
+
+    /* ================= LOGIN & DASHBOARD ADMIN ================= */
+    function checkHostAuth() {
+      const isLogged = sessionStorage.getItem(AUTH_SESSION_KEY) === "true";
+      document.getElementById("hostLoginBox").style.display = isLogged ? "none" : "block";
+      document.getElementById("hostDashboardBox").style.display = isLogged ? "block" : "none";
+      document.getElementById("hostTabControls").style.display = isLogged ? "flex" : "none";
+      if (isLogged) {
+        updateDashboardStats();
+        renderAdminTable();
+        switchHostSubTab("dashboard");
+      }
+    }
+
+    function handleHostLogin(e) {
+      e.preventDefault();
+      const u = document.getElementById("adminUsername").value.trim();
+      const p = document.getElementById("adminPassword").value.trim();
+      const err = document.getElementById("loginErrorMessage");
+
+      if (u === "kepsek123" && p === "suki1234") {
+        err.style.display = "none";
+        sessionStorage.setItem(AUTH_SESSION_KEY, "true");
+        triggerToast("Login Pimpinan Berhasil!");
+        checkHostAuth();
+      } else {
+        err.style.display = "block";
+        triggerToast("Kredensial login salah!", "danger");
+      }
+    }
+
+    function handleHostLogout() {
+      sessionStorage.removeItem(AUTH_SESSION_KEY);
+      triggerToast("Sesi pimpinan telah diakhiri.");
+      checkHostAuth();
+    }
+
+    function updateDashboardStats() {
+      const all = getAll();
+      document.getElementById("metricTotal").textContent = all.length;
+      document.getElementById("metricPending").textContent = all.filter(x => x.status === "PENDING").length;
+      document.getElementById("metricApproved").textContent = all.filter(x => x.status === "APPROVED").length;
+      document.getElementById("metricCompleted").textContent = all.filter(x => x.status === "CHECKED_IN" || x.status === "COMPLETED").length;
+    }
+
+    function renderAdminTable() {
+      const tbody = document.getElementById("adminTableBody");
+      const filter = document.getElementById("filterStatus").value;
+      let data = getAll();
+      if (filter !== "ALL") data = data.filter(x => x.status === filter);
+
+      if (data.length === 0) {
+        tbody.innerHTML = `<tr><td colspan="8" style="text-align:center; padding:2rem; color:var(--text-muted);">Tidak ada agenda permohonan.</td></tr>`;
+        return;
+      }
+
+      tbody.innerHTML = data.map(item => {
+        let meta = "";
+        if (item.category === "SISWA") meta = `Kelas: ${item.studentClass} | NISN: ${item.studentNisn}`;
+        if (item.category === "WALI_MURID") meta = `Wali dari: ${item.parentOfStudent} (${item.studentClass})`;
+        if (item.category === "INSTANSI") meta = `${item.institutionName}`;
+
+        let sch = "-";
+        if (item.scheduledDate) {
+          sch = `<div><strong>${item.scheduledDate}</strong></div><small>${item.scheduledStart} - ${item.scheduledEnd}</small><div style="font-size:0.75rem; color:var(--navy-accent); font-weight:600;">${item.room}</div>`;
+        }
+
+        return `
+          <tr>
+            <td><img src="${item.faceSnapshot}" class="avatar-cell" onclick="openPhoto('${item.faceSnapshot}')" /></td>
+            <td><strong style="color:var(--navy-primary); font-family:monospace;">${item.ticketCode}</strong><br/><small style="color:var(--text-muted);">${item.createdAt}</small></td>
+            <td><div style="font-weight:700; color:var(--navy-darkest);">${item.fullName}</div><div style="font-size:0.75rem; color:var(--text-muted);">${item.phone}</div><div style="font-size:0.72rem; color:var(--yellow-accent); font-weight:700;">${meta}</div></td>
+            <td><span style="font-size:0.78rem; font-weight:700;">${item.category}</span></td>
+            <td><span style="font-size:0.72rem; font-weight:800;" class="pill-badge pill-pending">${item.urgency}</span><p style="font-size:0.8rem; margin-top:3px; max-width:180px;">${item.purpose}</p></td>
+            <td>${sch}</td>
+            <td><span class="pill-badge pill-${item.status.toLowerCase()}">${item.status}</span></td>
+            <td>
+              <div style="display:flex; gap:4px; flex-wrap:wrap;">
+                ${item.status === 'PENDING' ? `
+                  <button class="btn btn-navy btn-sm" onclick="openScheduleModal('${item.id}', 'APPROVE')">Setujui</button>
+                  <button class="btn btn-danger btn-sm" onclick="openRejectModal('${item.id}')">Tolak</button>
+                ` : ''}
+                ${item.status === 'APPROVED' ? `
+                  <button class="btn btn-gold btn-sm" onclick="openScheduleModal('${item.id}', 'RESCHEDULE')">Reschedule</button>
+                  <button class="btn btn-danger btn-sm" onclick="openRejectModal('${item.id}')">Batal</button>
+                ` : ''}
+                ${item.status === 'CHECKED_IN' ? `
+                  <button class="btn btn-secondary btn-sm" onclick="markComplete('${item.id}')">Selesai</button>
+                ` : ''}
+              </div>
+            </td>
+          </tr>`;
+      }).join("");
+    }
+
+    /* ================= ANTI-COLLISION ENGINE ================= */
+    function checkScheduleCollision() {
+      const id = document.getElementById("modalAppointmentId").value;
+      const date = document.getElementById("modalDate").value;
+      const start = document.getElementById("modalStartTime").value;
+      const end = document.getElementById("modalEndTime").value;
+      const room = document.getElementById("modalRoom").value;
+      const alertBox = document.getElementById("collisionAlert");
+      const btnSave = document.getElementById("btnSaveSchedule");
+
+      if (!date || !start || !end || !room) {
+        alertBox.style.display = "none";
+        btnSave.disabled = false;
+        return false;
+      }
+
+      if (start >= end) {
+        alertBox.style.display = "block";
+        document.getElementById("collisionText").textContent = "Jam Mulai harus lebih awal daripada Jam Selesai!";
+        btnSave.disabled = true;
+        return true;
+      }
+
+      const conflict = getAll().find(item => {
+        if (item.id === id) return false;
+        if (item.status !== "APPROVED" && item.status !== "CHECKED_IN") return false;
+        if (item.scheduledDate !== date || item.room !== room) return false;
+        return (start < item.scheduledEnd) && (end > item.scheduledStart);
+      });
+
+      if (conflict) {
+        alertBox.style.display = "block";
+        document.getElementById("collisionText").innerHTML = `Slot BENTROK dengan <strong>${conflict.fullName}</strong> (${conflict.ticketCode}) jam <strong>${conflict.scheduledStart} - ${conflict.scheduledEnd} WIB</strong> di ${room}.`;
+        btnSave.disabled = true;
+        return true;
+      } else {
+        alertBox.style.display = "none";
+        btnSave.disabled = false;
+        return false;
+      }
+    }
+
+    function openScheduleModal(id, mode) {
+      const item = getAll().find(x => x.id === id);
+      if (!item) return;
+
+      document.getElementById("modalAppointmentId").value = item.id;
+      document.getElementById("modalActionType").value = mode;
+      document.getElementById("modalGuestInfo").textContent = `${item.fullName} (${item.category})`;
+      document.getElementById("modalPurposeInfo").textContent = item.purpose;
+      document.getElementById("scheduleModalTitle").textContent = mode === "APPROVE" ? "🗓️ Persetujuan & Penetapan Jadwal" : "🔄 Reschedule Jadwal";
+
+      const tomorrow = new Date();
+      tomorrow.setDate(tomorrow.getDate() + 1);
+
+      document.getElementById("modalDate").value = item.scheduledDate || item.requestedDate || tomorrow.toISOString().split("T")[0];
+      document.getElementById("modalStartTime").value = item.scheduledStart || "09:00";
+      document.getElementById("modalEndTime").value = item.scheduledEnd || "10:00";
+      if (item.room) document.getElementById("modalRoom").value = item.room;
+
+      checkScheduleCollision();
+      document.getElementById("scheduleModal").classList.add("active");
+    }
+
+    function handleScheduleSubmit(e) {
+      e.preventDefault();
+      if (checkScheduleCollision()) {
+        triggerToast("Jadwal bentrok dengan agenda lain!", "danger");
+        return;
+      }
+
+      const id = document.getElementById("modalAppointmentId").value;
+      const mode = document.getElementById("modalActionType").value;
+      const all = getAll();
+      const item = all.find(x => x.id === id);
+
+      if (item) {
+        item.status = "APPROVED";
+        item.room = document.getElementById("modalRoom").value;
+        item.scheduledDate = document.getElementById("modalDate").value;
+        item.scheduledStart = document.getElementById("modalStartTime").value;
+        item.scheduledEnd = document.getElementById("modalEndTime").value;
+
+        saveAll(all);
+        renderAdminTable();
+        closeModal("scheduleModal");
+        triggerToast(mode === "APPROVE" ? "Audiensi berhasil disetujui & dijadwalkan!" : "Jadwal berhasil diubah!");
+      }
+    }
+
+    function openRejectModal(id) {
+      document.getElementById("rejectAppointmentId").value = id;
+      document.getElementById("rejectionReasonInput").value = "";
+      document.getElementById("rejectModal").classList.add("active");
+    }
+
+    function handleRejectSubmit(e) {
+      e.preventDefault();
+      const id = document.getElementById("rejectAppointmentId").value;
+      const reason = document.getElementById("rejectionReasonInput").value.trim();
+      const all = getAll();
+      const item = all.find(x => x.id === id);
+
+      if (item) {
+        item.status = "REJECTED";
+        item.rejectionReason = reason;
+        saveAll(all);
+        renderAdminTable();
+        closeModal("rejectModal");
+        triggerToast("Permohonan ditolak secara resmi.", "danger");
+      }
+    }
+
+    function markComplete(id) {
+      const all = getAll();
+      const item = all.find(x => x.id === id);
+      if (item) {
+        item.status = "COMPLETED";
+        saveAll(all);
+        renderAdminTable();
+        triggerToast("Sesi audiensi selesai.");
+      }
+    }
+
+    /* ================= KIOS SCANNER LOBI ================= */
+    let currentScanned = null;
+
+    function handleScanTicket() {
+      const code = document.getElementById("scanTicketInput").value.trim().toUpperCase();
+      const screen = document.getElementById("scanResultScreen");
+      const item = getAll().find(x => x.ticketCode === code);
+
+      if (!item) {
+        screen.style.display = "none";
+        triggerToast("Kode tiket tidak ditemukan!", "danger");
+        return;
+      }
+
+      currentScanned = item;
+      document.getElementById("scanFaceImg").src = item.faceSnapshot;
+      document.getElementById("scanTicketBadge").textContent = item.ticketCode;
+      document.getElementById("scanStatusBadge").textContent = item.status;
+      document.getElementById("scanStatusBadge").className = `pill-badge pill-${item.status.toLowerCase()}`;
+      document.getElementById("scanGuestName").textContent = item.fullName;
+      document.getElementById("scanCategory").textContent = `Kategori: ${item.category} | No. WA: ${item.phone}`;
+      document.getElementById("scanSchedule").textContent = item.scheduledDate ? `Jadwal: ${item.scheduledDate} (${item.scheduledStart} - ${item.scheduledEnd} WIB)` : "Belum Dijadwalkan";
+      document.getElementById("scanRoom").textContent = item.room ? `Ruang: ${item.room}` : "";
+
+      document.getElementById("btnConfirmCheckin").style.display = (item.status === "APPROVED") ? "inline-flex" : "none";
+      document.getElementById("btnConfirmCheckout").style.display = (item.status === "CHECKED_IN") ? "inline-flex" : "none";
+
+      screen.style.display = "block";
+      triggerToast("Data tiket siap diverifikasi.");
+    }
+
+    function confirmCheckin() {
+      if (!currentScanned) return;
+      const all = getAll();
+      const item = all.find(x => x.id === currentScanned.id);
+      if (item) {
+        item.status = "CHECKED_IN";
+        item.checkInAt = new Date().toLocaleString("id-ID");
+        saveAll(all);
+        handleScanTicket();
+        renderAdminTable();
+        triggerToast("Tamu berhasil Check-In!");
+      }
+    }
+
+    function confirmCheckout() {
+      if (!currentScanned) return;
+      const all = getAll();
+      const item = all.find(x => x.id === currentScanned.id);
+      if (item) {
+        item.status = "COMPLETED";
+        saveAll(all);
+        handleScanTicket();
+        renderAdminTable();
+        triggerToast("Tamu telah Check-Out.");
+      }
+    }
+
+    /* ================= MODAL & MINI QR UTILS ================= */
+    function openPhoto(src) {
+      document.getElementById("enlargedPhoto").src = src;
+      document.getElementById("photoModal").classList.add("active");
+    }
+
+    function closeModal(id) {
+      document.getElementById(id).classList.remove("active");
+    }
+
+    function triggerToast(msg, type = "normal") {
+      const tray = document.getElementById("toastContainer");
+      const t = document.createElement("div");
+      t.className = "toast-card";
+      if (type === "danger") t.style.borderLeftColor = "var(--danger)";
+      t.innerHTML = `<span>${type === "danger" ? "⚠️" : "🔔"}</span><span>${msg}</span>`;
+      tray.appendChild(t);
+      setTimeout(() => {
+        t.style.opacity = "0";
+        t.style.transform = "translateX(40px)";
+        setTimeout(() => t.remove(), 300);
+      }, 3500);
+    }
+
+    function renderMiniQr(containerId, text) {
+      const box = document.getElementById(containerId);
+      if (!box) return;
+
+      let hash = 0;
+      for (let i = 0; i < text.length; i++) {
+        hash = (hash << 5) - hash + text.charCodeAt(i);
+        hash |= 0;
+      }
+
+      let rects = "";
+      for (let r = 0; r < 7; r++) {
+        for (let c = 0; c < 7; c++) {
+          if ((r < 2 && c < 2) || (r > 4 && c < 2) || (r < 2 && c > 4)) {
+            rects += `<rect x="${c * 15 + 10}" y="${r * 15 + 10}" width="12" height="12" fill="#0f274a"/>`;
+          } else if ((hash & (1 << ((r * 7 + c) % 31))) !== 0) {
+            rects += `<rect x="${c * 15 + 10}" y="${r * 15 + 10}" width="12" height="12" fill="#0f274a"/>`;
+          }
+        }
+      }
+
+      box.innerHTML = `
+        <svg viewBox="0 0 125 125" width="100%" height="100%">
+          <rect width="100%" height="100%" fill="#ffffff" rx="6"/>
+          ${rects}
+        </svg>`;
+    }
+  </script>
+</body>
+</html>
